@@ -9,7 +9,8 @@ function [fopt,xopt,gopt]=Gradient_QN(Oracle,xini)
     //                                                                           //
     ///////////////////////////////////////////////////////////////////////////////
 
-    exec('Wolfe_Skel.sci')
+ 
+ exec('Wolfe_Skel.sci')
     // ------------------------
     // Parametres de la methode
     // ------------------------

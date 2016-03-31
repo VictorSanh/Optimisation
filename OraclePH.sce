@@ -39,7 +39,7 @@ function[F, G, H, ind] = OraclePH(qc, ind)
         // Si ind = 7, on calcule F, G et H 
     elseif ind == 7 then
 
-        temp = (r.*abs(q0+B*qc))*ones(1, 9);
+        temp = (r.*abs(q0+B*qc))*ones(1, size(B, 2));
         H = 2*B'*(temp.*B);
         F =  1/3*(q0+B*qc)'*(r .* (q0+B*qc) .* abs(q0+B*qc)) + (pr'*Ar*(q0+B*qc));
         G = B'*Ar'*pr + B'*(r .* (q0+B*qc) .* abs(q0+B*qc));

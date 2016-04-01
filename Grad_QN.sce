@@ -65,6 +65,7 @@ function [fopt,xopt,gopt]=Gradient_QN(Oracle,xini)
             dG = Gn - G;
 
             W = W + (dx * dx')/(dG' * dx) - (W * dG * dG' * W)/(dG'*W*dG);        
+            //W = (eye(dim,dim) - dx)
             D = - W *Gn;
 
             F = Fn;
@@ -79,12 +80,12 @@ function [fopt,xopt,gopt]=Gradient_QN(Oracle,xini)
         //    - mise a jour des variables
 
         x = x + (alphan*D);
-        alpha = alphan     
+       // alpha = alphan     
 
         //    - evolution du gradient, du pas et du critere
 
         logG = [ logG ; log10(norm(G)) ];
-        logP = [ logP ; log10(alpha) ];
+        logP = [ logP ; log10(alphan) ];
         Cout = [ Cout ; F ];
 
 

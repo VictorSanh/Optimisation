@@ -23,7 +23,7 @@ function[F, G, H, ind] = OraclePH(qc, ind)
         // Si ind = 5, on calcule seulement H     
     elseif ind == 5 then
 
-        temp = (r.*abs(q0+B*qc))*ones(1, 9);
+        temp = (r.*abs(q0+B*qc))*ones(1, size(B, 2));
         H = 2*B'*(temp.*B);
         F = 0
         G = 0
@@ -31,7 +31,7 @@ function[F, G, H, ind] = OraclePH(qc, ind)
         // Si ind = 6, on calcule G et H 
     elseif ind == 6 then
 
-        temp = (r.*abs(q0+B*qc))*ones(1, 9);
+        temp = (r.*abs(q0+B*qc))*ones(1, size(B, 2));
         H = 2*B'*(temp.*B);
         G = B'*Ar'*pr + B'*(r .* (q0+B*qc) .* abs(q0+B*qc));
         F = 0

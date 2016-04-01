@@ -68,11 +68,11 @@ function [fopt,xopt,gopt]=Newton(Oracle,xini)
 
         //    - mise a jour des variables
         x = x + (alphan*D);
-        alpha = alphan
+        //alpha = alphan
 
         //    - evolution du gradient, du pas et du critere
         logG = [ logG ; log10(norm(G)) ];
-        logP = [ logP ; log10(alpha) ];
+        logP = [ logP ; log10(alphan) ];
         Cout = [ Cout ; F ];
 
     end

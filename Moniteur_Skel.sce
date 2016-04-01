@@ -48,6 +48,8 @@ exec('OraclePH.sce');
 exec('Grad_QN.sce');
 exec('Newton.sce');
 
+exec('OracleDG.sce');
+exec('OracleDH.sce');
 // -----> A completer...
 // -----> A completer...
 // -----> A completer...
@@ -59,6 +61,7 @@ exec('Newton.sce');
 // La dimension (n-md) est celle du probleme primal
 
 xini = 0.1 * rand(n-md,1);
+lambda = 0.5*rand(md,1);
 
 // ----------------------------
 // Minimisation proprement dite
@@ -71,13 +74,14 @@ xini = 0.1 * rand(n-md,1);
 //[fopt, xopt, gopt] = Gradient_V(OraclePG, xini);
 //[fopt, xopt, gopt] = Gradient_Conj(OraclePG, xini);
 //[fopt, xopt, gopt] = Gradient_QN(OraclePG, xini);
-[fopt, xopt, gopt] = Newton(OraclePH, xini);
+[fopt, xopt, gopt] = Newton(OracleDH, lambda);
 
 // --------------------------
 // Verification des resultats
 // --------------------------
 
-[q,z,f,p] = HydrauliqueP(xopt);
+//[q,z,f,p] = HydrauliqueP(xopt);
+[q,z,f,p] = HydrauliqueD(xopt);
 
 Verification(q,z,f,p);
 

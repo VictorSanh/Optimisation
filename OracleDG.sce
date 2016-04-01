@@ -1,4 +1,4 @@
-function[F, G, ind] = OracleDG(q, lambda, ind)
+function[F, G, ind] = OracleDG(lambda, ind)
 
     // Si ind = 2, on calcule seulement F
 

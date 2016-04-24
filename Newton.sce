@@ -57,10 +57,15 @@ function [fopt,xopt,gopt]=Newton(Oracle,xini)
         //On vérifie tout de même que la matrice hessienne est inversible...
         //Si ce n'est pas le cas, on sort de la boucle...
         if ~(det(H) == 0) then
+            size(G)
+            size(H)
+            size(-inv(H))
+           // pause
             D = -inv(H)*G
         else
+            D=-G
             disp('Attention ! Hessienne non inversible !')
-            break
+            //break
         end
 
         //Calcul de la longueur du pas de gradient

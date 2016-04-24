@@ -39,6 +39,7 @@ exec('Verification.sci');
 // Exemple : la fonction "optim" de Scilab
 //
 exec('OraclePG.sci');
+exec('Gradient_F.sci')
 exec('Gradient_V.sce');
 exec('Gradient_Conj.sce');
 exec('Optim_Scilab.sci');
@@ -61,7 +62,7 @@ exec('OracleDH.sce');
 // La dimension (n-md) est celle du probleme primal
 
 xini = 0.1 * rand(n-md,1);
-lambda = 0.5*rand(md,1);
+lambda = 0.1*rand(md,1);
 
 // ----------------------------
 // Minimisation proprement dite

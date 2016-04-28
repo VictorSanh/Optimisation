@@ -51,7 +51,7 @@ exec('Newton.sce');
 
 exec('Optim_Scilab.sci');
 
-titrgr = "Gradient à pas variable sur le problème dual"
+titrgr = "Gradient conjugué sur le problème dual"
 //titrgr = "Fonction optim de Scilab sur le probleme primal";
 //titrgr = "Fonction optim de Scilab sur le probleme dual";
 
@@ -81,14 +81,14 @@ lambda = 0.1*rand(md,1);
 //[fopt, xopt, gopt] = Gradient_QN(OracleDG, lambda);
 
 //[fopt, xopt, gopt] = Newton(OraclePH, xini);
-//[fopt, xopt, gopt] = Newton(OracleDH, lambda);
+[fopt, xopt, gopt] = Newton(OracleDH, lambda);
 
 // --------------------------
 // Verification des resultats
 // --------------------------
 
-[q,z,f,p] = HydrauliqueP(xopt);
-//[q,z,f,p] = HydrauliqueD(xopt);
+//[q,z,f,p] = HydrauliqueP(xopt);
+[q,z,f,p] = HydrauliqueD(xopt);
 
 Verification(q,z,f,p);
 

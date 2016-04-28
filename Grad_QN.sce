@@ -5,7 +5,7 @@ function [fopt,xopt,gopt]=Gradient_QN(Oracle,xini)
     //                                                                           //
     //         RESOLUTION D'UN PROBLEME D'OPTIMISATION SANS CONTRAINTES          //
     //                                                                           //
-    //         Methode de gradient conjugué                                    //
+    //         Methode de Quasi Newton                                           //
     //                                                                           //
     ///////////////////////////////////////////////////////////////////////////////
 
@@ -105,7 +105,7 @@ function [fopt,xopt,gopt]=Gradient_QN(Oracle,xini)
     'Temps CPU         : ' string(tcpu);...
     'Critere optimal   : ' string(fopt);...
     'Norme du gradient : ' string(norm(gopt))];
-    disp('Fin de la methode de gradient a pas fixe')
+    disp('Fin de la methode de Quasi Newton')
     disp(cvge)
 
     // - visualisation de la convergence

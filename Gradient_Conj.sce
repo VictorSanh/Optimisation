@@ -64,7 +64,7 @@ function [fopt,xopt,gopt]=Gradient_Conj(Oracle,xini)
             beta = (Gn-G)'*Gn/(G'*G)    
             D = -Gn + beta*D
 
-            //    - calcul de la longueu++r du pas de gradient
+            //    - calcul de la longueur du pas de gradient
 
             alphan = Wolfe(alpha, x, D, Oracle);
 

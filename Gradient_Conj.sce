@@ -5,7 +5,7 @@ function [fopt,xopt,gopt]=Gradient_Conj(Oracle,xini)
     //                                                                           //
     //         RESOLUTION D'UN PROBLEME D'OPTIMISATION SANS CONTRAINTES          //
     //                                                                           //
-    //         Methode de gradient conjugué                                    //
+    //         Methode de gradient conjugué                                      //
     //                                                                           //
     ///////////////////////////////////////////////////////////////////////////////
 
@@ -14,7 +14,7 @@ function [fopt,xopt,gopt]=Gradient_Conj(Oracle,xini)
     // Parametres de la methode
     // ------------------------
 
-    titre = "Parametres du gradient a pas fixe";
+    titre = "Parametres du gradient Conjugué";
     labels = ["Nombre maximal d''iterations";...
     "Valeur du pas de gradient";...
     "Seuil de convergence sur ||G||"];
@@ -99,7 +99,7 @@ function [fopt,xopt,gopt]=Gradient_Conj(Oracle,xini)
     'Temps CPU         : ' string(tcpu);...
     'Critere optimal   : ' string(fopt);...
     'Norme du gradient : ' string(norm(gopt))];
-    disp('Fin de la methode de gradient a pas fixe')
+    disp('Fin de la methode de gradient conjugué')
     disp(cvge)
 
     // - visualisation de la convergence

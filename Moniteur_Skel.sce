@@ -42,18 +42,12 @@ exec('OraclePG.sci');
 exec('Gradient_F.sci')
 exec('Gradient_V.sce');
 exec('Gradient_Conj.sce');
-exec('Optim_Scilab.sci');
-titrgr = "Fonction optim de Scilab sur le probleme primal";
-
-exec('OraclePH.sce');
 exec('Grad_QN.sce');
 exec('Newton.sce');
 
-exec('OracleDG.sce');
-exec('OracleDH.sce');
-// -----> A completer...
-// -----> A completer...
-// -----> A completer...
+exec('Optim_Scilab.sci');
+//titrgr = "Fonction optim de Scilab sur le probleme primal";
+titrgr = "Fonction optim de Scilab sur le probleme dual";
 
 // ------------------------------
 // Initialisation de l'algorithme
@@ -74,7 +68,10 @@ lambda = 0.1*rand(md,1);
 //[fopt, xopt, gopt] = Gradient_F(OraclePG, xini);
 //[fopt, xopt, gopt] = Gradient_V(OraclePG, xini);
 //[fopt, xopt, gopt] = Gradient_Conj(OraclePG, xini);
-//[fopt, xopt, gopt] = Gradient_QN(OraclePG, xini);
+[fopt, xopt, gopt] = Gradient_QN(OraclePG, xini);
+[fopt, xopt, gopt] = Gradient_QN(OracleDG, lambda);
+
+[fopt, xopt, gopt] = Newton(OraclePH, xini);
 [fopt, xopt, gopt] = Newton(OracleDH, lambda);
 
 // --------------------------
